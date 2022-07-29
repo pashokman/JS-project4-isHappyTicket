@@ -5,20 +5,16 @@ const isHappyTicket = (number) => {
     let sumOfFirstThreeDigits = 0;
     let sumOfLastThreeDigits = 0;
 
-    if (length < 6 || length > 6) {
-        return false;
-    } else {
-        for (let index = 0; index < ((length / 2)); index++) {
-            sumOfFirstThreeDigits += Number(`${str[index]}`);   
-        }
-        for (let index = length - 3; index < length; index++) {
-            sumOfLastThreeDigits += Number(`${str[index]}`);            
-        }        
+    if (length !== 6) return false;
+    for (let index = 0; index < ((length / 2)); index++) {
+        sumOfFirstThreeDigits += Number(`${str[index]}`);   
     }
+    for (let index = length - 3; index < length; index++) {
+        sumOfLastThreeDigits += Number(`${str[index]}`);            
+    }        
 
-    if (sumOfFirstThreeDigits === sumOfLastThreeDigits) {
-        return true;
-    } else return false;
+    if (sumOfFirstThreeDigits === sumOfLastThreeDigits) return true;
+    return false;
 }
 
 
